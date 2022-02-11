@@ -1,0 +1,17 @@
+{
+  "Account": "Λογαριασμός",
+  "Expiration date": "Ημερομηνία Λήξης",
+  "From": "Από",
+  "To": "Προς",
+  "From Account": "Από Λογαριασμό",
+  "Request New Card": "Αίτηση Νέας Κάρτας",
+  "Details": "Λεπτομέρειες",
+  "Statement": "Κατάθεση",
+  "Get Statement": "Λήψη Κίνησης Λογαριασμού",
+  "Please Select": "Παρακαλώ Επιλέξτε",
+  "Recent Transactions": "Πρόσφατες Συναλλαγές",
+  "Unnamed Card": "Ανώνυμη Κάρτα",
+  "Named Card": "Επώνυμη Κάρτα",
+  "Card Name": "Όνομα Κάρτας",
+  "Select Card Name": "Επιλέξτε Όνομα Κάρτας"
+}

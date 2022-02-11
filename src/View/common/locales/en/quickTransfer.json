@@ -1,0 +1,15 @@
+{
+  "Quick Transfer": "Quick Transfer",
+  "From": "From",
+  "To": "To",
+  "Amount": "Amount",
+  "You Receive": "You Receive",
+  "Selling": "Selling",
+  "Total Amount to Transfer": "Total Amount to Transfer:",
+  "From Account":"From Account",
+  "To Account":"To Account",
+  "Complete Transaction":"Complete Transaction",
+  "Transfer": "Transfer",
+  "Go to Accounts": "Go to Accounts",
+  "notEnoughAccounts": "There aren't enough accounts in order to do a quick transfer. In order to be able to do a quick transfer, please create a new account with the same currency."
+}

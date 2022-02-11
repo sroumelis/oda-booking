@@ -1,0 +1,100 @@
+{
+  "name": "oda-market-merchant",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "dependencies": {
+    "@date-io/date-fns": "^1.3.13",
+    "@date-io/moment": "^1.3.13",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@material-ui/pickers": "^3.3.10",
+    "@material-ui/styles": "^4.11.3",
+    "@reach/router": "^1.3.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "aphrodite": "^2.4.0",
+    "base-64": "^1.0.0",
+    "date-fns": "^2.21.1",
+    "dotenv": "^8.2.0",
+    "formik": "^2.2.6",
+    "history": "^5.0.0",
+    "i18next": "^20.2.1",
+    "i18next-xhr-backend": "^3.2.2",
+    "material-ui": "^0.20.2",
+    "moment": "^2.29.1",
+    "oidc-client": "^1.11.5",
+    "react": "^17.0.2",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.8.13",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-loading-skeleton": "^2.2.0",
+    "react-redux": "^7.2.3",
+    "react-responsive-carousel": "^3.2.18",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux-oidc": "^4.0.0-beta1",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "styled-components": "^5.2.3",
+    "ua-parser-js": "^0.7.28",
+    "uuid": "^8.3.2",
+    "video-react": "^0.14.1",
+    "web-vitals": "^0.2.4",
+    "workbox-background-sync": "^5.1.3",
+    "workbox-broadcast-update": "^5.1.3",
+    "workbox-cacheable-response": "^5.1.3",
+    "workbox-core": "^5.1.3",
+    "workbox-expiration": "^5.1.3",
+    "workbox-google-analytics": "^5.1.3",
+    "workbox-navigation-preload": "^5.1.3",
+    "workbox-precaching": "^5.1.3",
+    "workbox-range-requests": "^5.1.3",
+    "workbox-routing": "^5.1.3",
+    "workbox-strategies": "^5.1.3",
+    "workbox-streams": "^5.1.3",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@babel/runtime": "^7.11.2",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-flow": "^2.29.1",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-react": "*",
+    "jest": "26.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

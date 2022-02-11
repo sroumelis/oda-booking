@@ -1,0 +1,18 @@
+{
+  "Documents": "Έγγραφα",
+  "New Document": "Νέο Έγγραφο",
+  "Choose File": "Επιλογή Αρχείου",
+  "No file selected": "Δεν επιλέχθηκε αρχείο",
+  "Upload File": "Ανέβασμα Αρχείου",
+  "Archive": "Συνημμένο",
+  "Keyword": "Kωδικός",
+  "Please Select": "Παρακαλώ Επιλέξτε",
+  "Date": "Ημερομηνία",
+  "Type": "Τύπος",
+  "Type keyword": "Τύπος Κωδικούς",
+  "Description": "Περιγραφή",
+  "Status": "Κατάσταση",
+  "No documents found": "Δεν βρέθηκαν έγγραφα",
+  "Uploading files is mandatory for payments involving amounts over 10000": "Το ανέβασμα αρχείων είναι υποχρεωτικό για συναλλαγές που αφορούν ποσά άνω των 10.000",
+  "Message": "Μήνυμα"
+}
