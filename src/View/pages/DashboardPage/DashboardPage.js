@@ -54,6 +54,7 @@ import {
 import { StyleSheet, css } from "aphrodite";
 import { parseAddressObject, parseJwt } from "../../../Utils/utilities";
 import { catalogSelectors } from "../../../State/modules/catalog/catalog";
+import { bookingActions } from "../../../State/modules/booking";
 import styles from "./styles";
 
 const DashboardPage = (props) => {
@@ -74,6 +75,10 @@ const DashboardPage = (props) => {
   const isUserInfoLoading = useSelector(isLoading);
   const orderInfo = useSelector(orderInfoSelectors.getOrderInfo);
   const basket = useSelector(basketSelectors.getBasket);
+
+  useEffect(() => {
+    dispatch(bookingActions.selectTable(null));
+  }, []);
 
   const setBasket = (basket) => {
     dispatch(basketActions.setBasket(basket));

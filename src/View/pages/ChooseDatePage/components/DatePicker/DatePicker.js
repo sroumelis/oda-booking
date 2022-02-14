@@ -15,12 +15,15 @@ import {
 } from "@material-ui/pickers";
 
 const DatePicker = (props) => {
-  const { storeInfo } = props;
+  const { storeInfo, callback } = props;
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")
   );
   const handleDateChange = (date) => {
     setSelectedDate(date);
+    if (callback) {
+      callback("date", date);
+    }
   };
   return (
     <div className={css(styles.footerContainer)}>

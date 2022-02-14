@@ -16,10 +16,13 @@ import {
 } from "@material-ui/pickers";
 
 const TimePicker = (props) => {
-  const { storeInfo } = props;
+  const { storeInfo, callback } = props;
   const [selectedTime, setSelectedTime] = React.useState(null);
-  const handleTimeChange = (date) => {
-    setSelectedTime(date);
+  const handleTimeChange = (timeSlot) => {
+    setSelectedTime(timeSlot);
+    if (callback) {
+      callback("timeSlot", timeSlot);
+    }
   };
 
   const hours = [

@@ -24,6 +24,7 @@ import delivery from "./delivery";
 import basket from "./basket";
 import takeout from "./takeout";
 import enrollCustomer from "./enrollCustomer";
+import booking from "./booking";
 
 const rootReducer = combineReducers({
   catalog,
@@ -50,6 +51,7 @@ const rootReducer = combineReducers({
   registration,
   stores,
   storeById,
+  booking,
 });
 
 export { rootReducer };

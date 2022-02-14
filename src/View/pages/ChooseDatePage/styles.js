@@ -33,7 +33,7 @@ export default StyleSheet.create({
     alignItems: "center",
     "@media (max-width: 768px)": {
       overflow: "auto",
-      padding: "16px 0px",
+      padding: "16px 16px",
       marginBottom: 50,
     },
   },
@@ -61,6 +61,7 @@ export default StyleSheet.create({
     padding: 16,
     marginTop: 14,
     maxWidth: 562,
+    width: "100%",
     "@media (max-width: 768px)": {
       marginBottom: 0,
     },
@@ -71,5 +72,13 @@ export default StyleSheet.create({
     fontSize: oda.fonts.normal,
     fontWeight: "bold",
     lineHeight: oda.lineHeights.large,
+  },
+  actionButton: {
+    width: "119.34px",
+    backgroundColor: "primary",
+  },
+  disabledButton: {
+    width: "119.34px",
+    backgroundColor: "#bac3d3",
   },
 });

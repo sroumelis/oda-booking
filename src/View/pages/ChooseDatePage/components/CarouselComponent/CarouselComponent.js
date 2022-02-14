@@ -24,6 +24,8 @@ const CarouselComponent = (props) => {
     });
   };
 
+  console.log("carusel");
+
   return (
     <div className={css(styles.carouselContainer)}>
       <div className={css(styles.carouselOverlay)} />
@@ -47,8 +49,16 @@ const CarouselComponent = (props) => {
           showStatus={false}
           showIndicators={false}
           showArrows={false}
-          // autoPlay
-          // infiniteLoop
+          autoPlay={
+            pictures[0]?.description?.length > 0 && pictures[0]?.url?.length > 0
+              ? true
+              : false
+          }
+          infiniteLoop={
+            pictures[0]?.description?.length > 0 && pictures[0]?.url?.length > 0
+              ? true
+              : false
+          }
           dynamicHeight={false}
           // renderArrowPrev={(onClickHandler, hasPrev, label) =>
           //   hasPrev && (
@@ -72,10 +82,10 @@ const CarouselComponent = (props) => {
           {pictures?.map((pic, i) => {
             return (
               <img
+                key={Math.random() * 1000}
                 className={css(styles.carouselImage)}
                 src={pic?.url}
                 alt=""
-                key={i}
               />
             );
           })}
