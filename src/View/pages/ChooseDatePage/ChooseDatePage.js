@@ -19,7 +19,8 @@ import {
   Review,
   Catalogue,
   ScrollToTop,
-  OpenBasket,
+  ConfirmationModal,
+  ConfirmationBackToHomeModal,
   OrderInfo,
 } from "./components";
 import { Button, TextButton } from "../../common/components";
@@ -92,17 +93,32 @@ const ChooseDatePage = (props) => {
   }
   const handleNext = () => {
     if (activeStep === 2) {
-      alert("showConfirmationModal");
-      setTimeout(() => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-      }, 1000);
-      return;
+      if (!Number(localStorage.dontShowOnHoldConfirmation)) {
+        _openTimeConfirmationModal();
+        return;
+      }
     }
     if (activeStep >= 3) {
       _handleSubmit();
       return;
     }
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const _openTimeConfirmationModal = () => {
+    navigate(location.pathname, {
+      state: {
+        showConfirmModal: true,
+      },
+    });
+  };
+
+  const _openBackToHomeConfirmationModal = () => {
+    navigate(location.pathname, {
+      state: {
+        showBackToHomeModal: true,
+      },
+    });
   };
 
   const _handleSubmit = () => {
@@ -127,10 +143,8 @@ const ChooseDatePage = (props) => {
       return;
     }
     if (activeStep === 3) {
-      alert("showConfirmationModal");
-      setTimeout(() => {
-        window.history.back();
-      }, 1000);
+      _openBackToHomeConfirmationModal();
+
       return;
     }
     if (activeStep === 4) {
@@ -176,6 +190,11 @@ const ChooseDatePage = (props) => {
       setCansubmit(false);
     }
     setCollectedData(data);
+  };
+
+  const _releaseTables = async () => {
+    try {
+    } catch (e) {}
   };
 
   return (
@@ -327,7 +346,17 @@ const ChooseDatePage = (props) => {
         }
       </div>
       <ScrollToTop />
-      <OpenBasket />
+      <ConfirmationModal
+        onClose={() => {
+          setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        }}
+        path={location.pathname}
+      />
+      <ConfirmationBackToHomeModal
+        onClose={() => {
+          _releaseTables();
+        }}
+      />
       <StoreInfo />
     </>
   );

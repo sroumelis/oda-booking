@@ -14,3 +14,5 @@ export { default as OpenBasket } from "./OpenBasket/OpenBasket";
 export { default as SearchBar } from "./SearchBar/SearchBar";
 export { default as CheckBox } from "./CheckBox/CheckBox";
 export { default as OrderInfo } from "./OrderInfo/OrderInfo";
+export { ConfirmationModal } from "./ConfirmationModal";
+export { ConfirmationBackToHomeModal } from "./ConfirmationBackToHomeModal";
