@@ -68,7 +68,8 @@ const LoginPage = (props) => {
   const _handlePlayerStateChange = (state, prevState) => {
     // copy player state to this component's state
     if (state.ended) {
-      setShowButtons(true);
+      // setShowButtons(true);
+      _redirectToLogin();
       // navigate(
       //   process.env.REACT_APP_RELATIVE_PATH
       //     ? `/${process.env.REACT_APP_RELATIVE_PATH}/catalogue`

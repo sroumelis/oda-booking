@@ -172,6 +172,14 @@ const ChooseDatePage = (props) => {
     };
   };
 
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(String(email));
+  };
+  const validatePhone = (phone) => {
+    return String(phone).match(/\d/g).length === 10;
+  };
+
   const _dataCollector = (property, value) => {
     console.log("tableId");
 
@@ -182,7 +190,9 @@ const ChooseDatePage = (props) => {
       "timeSlot" in data &&
       data?.userName?.length > 0 &&
       data?.email?.length > 0 &&
-      data?.phone?.length > 0 &&
+      validateEmail(data?.email) &&
+      data?.phone?.length >= 10 &&
+      validatePhone(data?.phone) &&
       selectedTable?.id
     ) {
       setCansubmit(true);
@@ -195,6 +205,21 @@ const ChooseDatePage = (props) => {
   const _releaseTables = async () => {
     try {
     } catch (e) {}
+  };
+
+  const _returnTitle = () => {
+    if (activeStep === 0) {
+      return "Choose Date";
+    }
+    if (activeStep === 1) {
+      return "Choose Time";
+    }
+    if (activeStep === 2) {
+      return "Select your Seating";
+    }
+    if (activeStep >= 3) {
+      return "Review";
+    }
   };
 
   return (
@@ -234,9 +259,7 @@ const ChooseDatePage = (props) => {
         />
         {
           <div className={css(styles.pageContainer)}>
-            <div className={css(styles.title)}>
-              {"Choose Date" + activeStep}
-            </div>
+            <div className={css(styles.title)}>{_returnTitle()}</div>
             <div className={css(styles.wrapper)}>
               {activeStep === 0 && !refreshing && (
                 <DatePicker

@@ -19,12 +19,19 @@ const DatePicker = (props) => {
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")
   );
+
   const handleDateChange = (date) => {
     setSelectedDate(date);
     if (callback) {
       callback("date", date);
     }
   };
+
+  const _disableWeekends = (date) => {
+    console.log("DATE_");
+    return date.getDay() === 0 || date.getDay() === 6;
+  };
+
   return (
     <div className={css(styles.footerContainer)}>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -37,9 +44,12 @@ const DatePicker = (props) => {
           label="Date picker inline"
           value={selectedDate}
           onChange={handleDateChange}
+          shouldDisableDate={_disableWeekends}
           KeyboardButtonProps={{
             "aria-label": "change date",
           }}
+          minDate={new Date()}
+          // maxDate={new Date()}
         />
       </MuiPickersUtilsProvider>
     </div>

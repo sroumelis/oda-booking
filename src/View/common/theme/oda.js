@@ -32,7 +32,7 @@ const oda = createMuiTheme({
       active: "#000",
       hover: "#000",
       selected: "#000",
-      disabled: "#000",
+      disabled: "#4d4d4d",
       disabledBackground: "#000",
     },
     text: {

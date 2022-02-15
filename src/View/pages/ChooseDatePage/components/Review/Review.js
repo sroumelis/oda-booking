@@ -16,6 +16,7 @@ import {
 } from "../../../../../State/modules/booking";
 
 const Review = ({ callback }) => {
+  const [phoneValue, setPhoneValue] = useState("");
   const selectedTable = useSelector(bookingSelectors.selectedTable);
   const {
     register,
@@ -24,10 +25,13 @@ const Review = ({ callback }) => {
     formState: { errors },
   } = useForm();
 
-  const _onBlur = (propery, value) => {
+  const _onBlur = (property, value) => {
     console.log(value);
+    if (property) {
+      setPhoneValue(value);
+    }
     if (callback) {
-      callback(propery, value);
+      callback(property, value);
     }
   };
 
@@ -48,28 +52,45 @@ const Review = ({ callback }) => {
         </div>
       </div>
       <div style={{ marginTop: 0 }}>
-        <form>
+        <form noValidate>
           <div style={{ marginTop: 16 }}>
             <TextField
-              id="outlined-basic"
+              id="name"
               label="Name"
-              onBlur={(e) => _onBlur("userName", e?.target?.value)}
+              onChange={(e) => _onBlur("userName", e?.target?.value)}
+              autoComplete="name"
+              inputProps={{
+                autoComplete: "off",
+              }}
             />
           </div>
           <div style={{ marginTop: 16 }}>
             <TextField
-              id="outlined-basic"
+              id="email"
               label="E-mail"
               type={"email"}
-              onBlur={(e) => _onBlur("email", e?.target?.value)}
+              onChange={(e) => _onBlur("email", e?.target?.value)}
+              autoComplete="email"
             />
           </div>
           <div style={{ marginTop: 16 }}>
             <TextField
-              id="outlined-basic"
+              id="phone"
               label="Mobile phone"
               type={"phone"}
-              onBlur={(e) => _onBlur("phone", e?.target?.value)}
+              value={phoneValue}
+              onChange={(e) => {
+                console.log("phone");
+                let value = e?.target?.value;
+                const re = /^[0-9\b]+$/;
+                if (value?.length >= 13) {
+                  value = value.slice(0, value.length - 1);
+                }
+                if (re.test(value) || !value) {
+                  _onBlur("phone", value);
+                }
+              }}
+              autoComplete="phone"
             />
           </div>
           <div style={{ marginTop: 16 }}>
@@ -80,7 +101,8 @@ const Review = ({ callback }) => {
               multiline
               rows={3}
               maxRows={5}
-              onBlur={(e) => _onBlur("comments", e?.target?.value)}
+              onChange={(e) => _onBlur("comments", e?.target?.value)}
+              autoComplete="new-password"
             />
           </div>
         </form>

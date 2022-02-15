@@ -11,8 +11,9 @@ export default StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: "space-around",
     gap: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
   footerContent: {
     // width: "100%",

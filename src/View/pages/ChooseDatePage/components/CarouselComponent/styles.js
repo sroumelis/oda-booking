@@ -8,8 +8,8 @@ export default StyleSheet.create({
     " .control-arrow": {
       opacity: "1!important",
     },
-    height: "45vh",
-    maxHeight: "45vh",
+    height: "32vh",
+    maxHeight: "32vh",
     "@media (max-width: 768px)": {
       maxHeight: "24vh",
     },

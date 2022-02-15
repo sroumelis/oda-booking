@@ -36,6 +36,7 @@ export default StyleSheet.create({
     borderRadius: 4,
     padding: 16,
     marginTop: 24,
+    textAlign: "center",
   },
   footer: {
     width: "100%",
